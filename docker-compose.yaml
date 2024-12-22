@@ -1,0 +1,16 @@
+
+version: "3"
+services:
+  web:
+    image: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python server.py
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    environment:
+      IN_DATABASE: "true"
+
